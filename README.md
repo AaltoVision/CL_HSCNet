@@ -51,7 +51,7 @@ You can train our continual setting network by running the following command:
 ```bash
 python train.py \
         --model hscnet \
-        --dataset [7S|12S|Cambridge|i7S|i12S|i19S] \
+        --dataset [i7S|i12S|i19S] \
         --n_iter number_of_training_iterations # default 30000
         --data_path /path/to/data/
         --dense_pred [False|True] # False: train without dense representation
