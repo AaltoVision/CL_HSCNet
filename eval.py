@@ -30,9 +30,7 @@ def eval(args):
             'office1/gates362', 'office1/gates381', 
             'office1/lounge', 'office1/manolis',
             'office2/5a', 'office2/5b']
-    
-    scenes_Cambridge = ['GreatCourt', 'KingsCollege', 'OldHospital',
-            'ShopFacade', 'StMarysChurch']
+
 
     if args.dataset in ['7S', 'i7S']:
         if args.scene not in scenes_7S:
@@ -41,11 +39,6 @@ def eval(args):
 
     if args.dataset in ['12S', 'i12S']:
         if args.scene not in scenes_12S:
-            print('Selected scene is not valid.')
-            sys.exit()
-
-    if args.dataset == 'Cambridge':
-        if args.scene not in scenes_Cambridge:
             print('Selected scene is not valid.')
             sys.exit()
 
@@ -66,7 +59,7 @@ def eval(args):
         if args.scene in scenes_12S: 
             datasetSs = datasetSs(args.data_path, args.dataset)
             datasetTs = datasetTs(args.data_path, args.dataset, args.scene,
-                    split='test')
+                    split='test_{}'.format(args.scene))
             dataset = datasetTs
         centers = np.reshape(np.array([[]]),(-1,3))
         for scene in scenes_7S:
@@ -86,7 +79,7 @@ def eval(args):
     elif args.dataset == 'i12S':
         dataset = get_dataset('12S')
         dataset = dataset(args.data_path, args.dataset, args.scene, 
-                split='test')
+                split='test_{}'.format(args.scene))
         centers = np.reshape(np.array([[]]),(-1,3))
         for scene in scenes_12S:
             centers = np.concatenate([centers, dataset.scene_data[scene][2]

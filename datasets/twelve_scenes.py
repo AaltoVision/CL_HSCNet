@@ -46,8 +46,9 @@ class TwelveScenes(data.Dataset):
             for scene, t, d in zip(self.scenes, self.transl, self.ids):
                 self.scene_data[scene] = (t, d, np.load(os.path.join(self.root,
                     scene,  'centers.npy')))
-
+                    
         self.split, scene = split.split('_')
+
 
         self.obj_suffixes = ['.color.jpg', '.pose.txt', '.depth.png', 
                 '.label.png']
@@ -64,6 +65,7 @@ class TwelveScenes(data.Dataset):
                     '{}{}'.format(self.split, '.txt')), 'r') as f:
                     frames = f.readlines()
                     self.frames = [scene + ' ' + frame for frame in frames ]
+
 
         if self.Buffer:
             if self.dataset == 'i12S':
@@ -91,14 +93,14 @@ class TwelveScenes(data.Dataset):
     def __getitem__(self, index):
         frame = self.frames[index].rstrip('\n')
         if self.dataset != '12S' and self.split == 'train':
-            scene, frame_id = frame.split(' ')
+            scene, frame = frame.split(' ')
             centers = self.scene_data[scene][2]
         else: 
             scene = self.scene
             if self.split == 'train':
                 centers = self.centers
         
-        obj_files = ['{}{}'.format(frame_id, 
+        obj_files = ['{}{}'.format(frame, 
                     obj_suffix) for obj_suffix in self.obj_suffixes]
         obj_files_full = [os.path.join(self.root, scene, 'data', 
                     obj_file) for obj_file in obj_files]
