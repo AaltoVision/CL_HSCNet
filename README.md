@@ -1,4 +1,8 @@
-# [ICCV2021] [Continual Learning for Image-Based Camera Localization](https://arxiv.org/pdf/2108.09112.pdf)
+# [ICCV 2021] [Continual Learning for Image-Based Camera Localization](https://arxiv.org/pdf/2108.09112.pdf)
+[Shuzhe Wang](https://ffrivera0.github.io/)\*, [Zakaria Laskar](https://scholar.google.com/citations?hl=en&user=kd3XIUkAAAAJ&view_op=list_works&sortby=pubdate)\*, [Iaroslav Melekhov](https://imelekhov.com/),  [Xiaotian Li](https://scholar.google.com/citations?user=lht2z_IAAAAJ&hl=en), [Juho Kannala](https://users.aalto.fi/~kannalj1/)
+
+\* Equal Contribution 
+
 This is the PyTorch implementation of our paper, [Continual Learning for Image-Based Camera Localization](https://arxiv.org/pdf/2108.09112.pdf). In this paper, we approach the problem of visual localization in a continual learning setup – whereby the model is trained on scenes in an incremental manner. Under this setting, all the scenes are not available during training but encountered sequentially. The results show that our method is memory efficient and has only slightly performance degradation compared to joint training.
 
 ![pipeline](images/pipeline1.jpg)
@@ -36,7 +40,7 @@ We run our experiments on  [7-Scenes](https://www.microsoft.com/en-us/research/p
 
 ## Evaluation
 
-The trained models for ***Buff-CS*** sampling method with buffer size 256 and 1024 can be download [here](https://drive.google.com/drive/folders/1jYKRicvyq5-Jb81-s9NbcfFj7MqtMmAJ?usp=sharing). We will provide the model of other sampling methods and soon.
+The trained models for ***Buff-CS*** sampling method with buffer size 256 and 1024 can be download [here](https://drive.google.com/drive/folders/1jYKRicvyq5-Jb81-s9NbcfFj7MqtMmAJ?usp=sharing). We will provide the model of other sampling methods soon.
 
 To evaluate  our method:
 
