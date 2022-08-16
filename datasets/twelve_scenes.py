@@ -221,8 +221,8 @@ class TwelveScenes(data.Dataset):
         
         coord, mask = get_coord(depth, pose, self.intrinsics_color_inv)
 
-        # img, coord, ctr_coord, mask, lbl = data_aug(img, coord, ctr_coord, 
-        #         mask, lbl, self.aug)
+        img, coord, ctr_coord, mask, lbl = data_aug(img, coord, ctr_coord, 
+                mask, lbl, self.aug)
             
         if self.model == 'hscnet':
             coord = coord - ctr_coord

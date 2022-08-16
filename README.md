@@ -1,5 +1,5 @@
-# Continual Learning for Image-Based Camera Localization
-This is the PyTorch implementation of our paper, [Continual Learning for Image-Based Camera Localization](https://arxiv.org/pdf/2108.09112.pdf) (ICCV 2021). In this paper, we approach the problem of visual localization in a continual learning setup – whereby the model is trained on scenes in an incremental manner. Under this setting, all the scenes are not available during training but encountered sequentially. The results show that our method is memory efficient and has only slightly performance degradation compared to joint training.
+# [ICCV2021] [Continual Learning for Image-Based Camera Localization](https://arxiv.org/pdf/2108.09112.pdf)
+This is the PyTorch implementation of our paper, [Continual Learning for Image-Based Camera Localization](https://arxiv.org/pdf/2108.09112.pdf). In this paper, we approach the problem of visual localization in a continual learning setup – whereby the model is trained on scenes in an incremental manner. Under this setting, all the scenes are not available during training but encountered sequentially. The results show that our method is memory efficient and has only slightly performance degradation compared to joint training.
 
 ![pipeline](images/pipeline1.jpg)
 
@@ -26,12 +26,16 @@ cd ./pnpransac
 python setup.py build_ext --inplace
 ```
 
+
+
 ## Data
 
 We run our experiments on  [7-Scenes](https://www.microsoft.com/en-us/research/project/rgb-d-dataset-7-scenes/), [12-Scenes](https://graphics.stanford.edu/projects/reloc/) and also 19-Scenes by combining the former scenes. To train/evaluate our code, you need to download the datasets from their website. We also need an additional  [data package](https://drive.google.com/drive/folders/19KyyoYy-2Nnc2Vu6yXGMvSJvo9Yfgfrh?usp=sharing) which contains other necessary files for reproducing our results.
 
 
+
 ## Evaluation
+
 The trained models for ***Buff-CS*** sampling method with buffer size 256 and 1024 can be download [here](https://drive.google.com/drive/folders/1jYKRicvyq5-Jb81-s9NbcfFj7MqtMmAJ?usp=sharing). We will provide the model of other sampling methods and soon.
 
 To evaluate  our method:
@@ -45,7 +49,10 @@ python eval.py \
         --data_path /path/to/data/
 ```
 
+
+
 ## Training 
+
 You can train our continual setting network by running the following command:
 
 ```bash
@@ -61,10 +68,19 @@ python train.py \
 ```
 
 
+
+## Acknowledgements
+
+We appreciate the previous open-source repositories [DSAC++](https://github.com/vislearn/LessMore) and [HSCNet](https://github.com/AaltoVision/hscnet).
+
+
+
 ## License
 
 Copyright (c) 2021 AaltoVision.  
 This code is released under the [MIT License](LICENSE).
+
+
 
 ## Citation
 
@@ -76,13 +92,6 @@ Please consider citing our papers if you find this code useful for your research
   author={Wang, Shuzhe and Laskar, Zakaria and Melekhov, Iaroslav and Li, Xiaotian and Kannala, Juho},
   journal={arXiv preprint arXiv:2108.09112},
   year={2021}
-}
-
-@inproceedings{li2020hscnet,
-    title = {Hierarchical Scene Coordinate Classification and Regression for Visual Localization},
-    author = {Li, Xiaotian and Wang, Shuzhe and Zhao, Yi and Verbeek, Jakob and Kannala, Juho},
-    booktitle = {CVPR},
-    year = {2020}
 }
 ```
 
