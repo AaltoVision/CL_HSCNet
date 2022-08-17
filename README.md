@@ -91,10 +91,11 @@ This code is released under the [MIT License](LICENSE).
 Please consider citing our papers if you find this code useful for your research:  
 
 ```
-@article{wang2021continual,
-  title={Continual Learning for Image-Based Camera Localization},
+@inproceedings{wang2021continual,
+  title={Continual learning for image-based camera localization},
   author={Wang, Shuzhe and Laskar, Zakaria and Melekhov, Iaroslav and Li, Xiaotian and Kannala, Juho},
-  journal={arXiv preprint arXiv:2108.09112},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={3252--3262},
   year={2021}
 }
 ```
